@@ -1,0 +1,43 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+About
+{% endblock title_block%}
+
+{% block body_block %}
+
+<link href="{% static 'css/signin.css' %}" rel="stylesheet">
+
+
+<div class="jumbotron-fluid" style="padding-bottom: 2px; margin-top: 15px;">
+    <h2 class="display-5">Sobre o Rango</h2>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <p>O Rango é uma aplicação que tem por objetivo o gerenciamento de links.</p>    
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 offset-md-0 col-sm-6 offset-sm-3">
+            <img src="{% static 'images/rango2.jpg' %}" alt="Picture of Rango" />
+        </div>
+        <div class="col-md-4 offset-md-0 col-sm-6 offset-sm-3">
+            <img src="/media/painel-rango.jpg" alt="Picture of Rango" height="275px" width="187px"/>
+        </div>
+        <div class="col-md-4 offset-md-0 col-sm-6 offset-sm-3">
+            <img src="/media/rango_cartaz.jpg" alt="Picture of Rango" />
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron-fluid" style="text-align:center; padding-bottom: 2px; margin-top: 10px;">
+    <p>
+        Essa página foi criada por {{ autor }}
+    </p>
+</div>
+
+{% endblock body_block %}

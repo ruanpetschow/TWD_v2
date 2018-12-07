@@ -1,0 +1,4 @@
+coverage==4.5.1
+Django==1.9.10
+django-bootstrap-toolkit==2.15.0
+Pillow==5.2.0

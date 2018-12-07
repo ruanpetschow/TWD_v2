@@ -1,0 +1,39 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+{% load bootstrap_toolkit %}
+
+{% block title_block %}
+    Registre-se
+{% endblock title_block%}
+
+{% block body_block %}
+<link href="{% static 'css/signin.css' %}" rel="stylesheet">
+
+
+<div class="jumbotron-fluid" style="text-align: center; padding: 5px; margin-top: 5%">
+    <h2 class="display-5">Registre-se para o Rango</h2>
+</div> 
+    
+    {% if registered %}
+        Rango diz: <strong>obrigado por se registrar!</strong><br/>
+        <a href="{% url 'index' %}">Volte à página principal.</a><br/>
+    {% else %}
+
+        <form role="form" class="form-signin" id="user_form" method="post" action="{% url 'register' %}" enctype="multipart/form-data">{% csrf_token %}
+            
+            <h5 class="form-signin-heading">Informe seus dados</h5>
+
+            {% for field in user_form %}
+                <div class="form-group"> {{ field }} </div>     
+            {% endfor %}
+            
+            {% for field in profile_form %}
+                <div class="form-group"> {{ field }} </div>    
+            {% endfor %}
+            
+            <button class="btn btn-primary btn-block" type="submit" name="submit">
+                Registre-se
+            </button>
+        </form>
+    {% endif %}
+{% endblock body_block %}
